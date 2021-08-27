@@ -1,0 +1,24 @@
+#chart-toggle {
+   display: inline-flex;
+}
+
+#chart-toggle h4 {
+   margin-top: 2px;
+   padding-right: 10px;
+   padding-left: 10px;
+}
+
+.controls {
+   display: flex;
+   padding: 32px;
+}
+
+#chart-toggle,
+#fundchecks {
+   flex: 0 0 33%;
+}
+
+.chart-section {
+   margin-top: 48px;
+   margin-right: 4rem;
+}

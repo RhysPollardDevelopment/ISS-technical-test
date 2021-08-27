@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+      <link
+         rel="stylesheet"
+         href="node_modules/leonardo-ui/dist/leonardo-ui.css"
+         type="text/css"
+      />
+      <script
+         src="https://cdn.jsdelivr.net/npm/picasso.js"
+         crossorigin
+      ></script>
+      <script
+         src="https://code.jquery.com/jquery-3.6.0.min.js"
+         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+         crossorigin="anonymous"
+      ></script>
+      <!-- CSS file-->
+      <link rel="stylesheet" href="static/css/index.css" type="text/css" />
+   </head>
+   <body>
+      <main>
+         <div>
+            <section class="chart-section">
+               <div
+                  id="barcontainer"
+                  style="height: 400px; position: relative"
+               ></div>
+               <div
+                  id="piecontainer"
+                  style="height: 400px; position: relative"
+               ></div>
+            </section>
+            <!-- Control section-->
+            <div class="controls">
+               <!-- Chart visibility toggle switch-->
+               <div id="chart-toggle">
+                  <h4>Bar Chart</h4>
+                  <div class="lui-switch">
+                     <label class="lui-switch__label">
+                        <input
+                           type="checkbox"
+                           class="lui-switch__checkbox"
+                           aria-label="Label"
+                           id="switch"
+                        />
+                        <span class="lui-switch__wrap">
+                           <span class="lui-switch__inner"></span>
+                           <span class="lui-switch__switch"></span>
+                        </span>
+                     </label>
+                  </div>
+                  <h4>Pie Chart</h4>
+               </div>
+               <!-- Fund checkboxes-->
+               <div id="fundchecks">
+                  <label class="lui-checkbox">
+                     <input
+                        class="lui-checkbox__input funds"
+                        type="checkbox"
+                        aria-label="Label"
+                        value="UK & Europe"
+                        checked
+                     />
+                     <div class="lui-checkbox__check-wrap">
+                        <span class="lui-checkbox__check"></span>
+                        <span class="lui-checkbox__check-text"
+                           >UK & Europe</span
+                        >
+                     </div>
+                  </label>
+                  <label class="lui-checkbox">
+                     <input
+                        class="lui-checkbox__input funds"
+                        type="checkbox"
+                        aria-label="Label"
+                        value="US"
+                        checked
+                     />
+                     <div class="lui-checkbox__check-wrap">
+                        <span class="lui-checkbox__check"></span>
+                        <span class="lui-checkbox__check-text">US</span>
+                     </div>
+                  </label>
+                  <label class="lui-checkbox">
+                     <input
+                        class="lui-checkbox__input funds"
+                        type="checkbox"
+                        aria-label="Label"
+                        value="Rest of World"
+                        checked
+                     />
+                     <div class="lui-checkbox__check-wrap">
+                        <span class="lui-checkbox__check"></span>
+                        <span class="lui-checkbox__check-text"
+                           >Rest of World</span
+                        >
+                     </div>
+                  </label>
+               </div>
+               <!-- Bar chart buttons-->
+               <div id="barbuttons">
+                  <div>
+                     <label class="lui-checkbox">
+                        <input
+                           class="lui-checkbox__input ifa"
+                           type="checkbox"
+                           aria-label="Label"
+                           value="Apple Financial"
+                           checked
+                        />
+                        <div class="lui-checkbox__check-wrap">
+                           <span class="lui-checkbox__check"></span>
+                           <span class="lui-checkbox__check-text"
+                              >Apple Financial</span
+                           >
+                        </div>
+                     </label>
+                     <label class="lui-checkbox">
+                        <input
+                           class="lui-checkbox__input ifa"
+                           type="checkbox"
+                           aria-label="Label"
+                           value="Pear Wealth"
+                           checked
+                        />
+                        <div class="lui-checkbox__check-wrap">
+                           <span class="lui-checkbox__check"></span>
+                           <span class="lui-checkbox__check-text"
+                              >Pear Wealth</span
+                           >
+                        </div>
+                     </label>
+                     <label class="lui-checkbox">
+                        <input
+                           class="lui-checkbox__input ifa"
+                           type="checkbox"
+                           aria-label="Label"
+                           value="Orange Investments"
+                           checked
+                        />
+                        <div class="lui-checkbox__check-wrap">
+                           <span class="lui-checkbox__check"></span>
+                           <span class="lui-checkbox__check-text"
+                              >Orange Investments</span
+                           >
+                        </div>
+                     </label>
+                  </div>
+               </div>
+               <div id="piebuttons">
+                  <!-- Radio buttons -->
+                  <div>
+                     <label class="lui-radiobutton">
+                        <input
+                           class="lui-radiobutton__input"
+                           type="radio"
+                           aria-label="2017 button"
+                           name="myradio"
+                           value="2017"
+                        />
+                        <div class="lui-radiobutton__radio-wrap">
+                           <span class="lui-radiobutton__radio"></span>
+                           <span class="lui-radiobutton__radio-text">2017</span>
+                        </div>
+                     </label>
+                     <label class="lui-radiobutton">
+                        <input
+                           class="lui-radiobutton__input"
+                           type="radio"
+                           aria-label="2018 button"
+                           name="myradio"
+                           value="2018"
+                        />
+                        <div class="lui-radiobutton__radio-wrap">
+                           <span class="lui-radiobutton__radio"></span>
+                           <span class="lui-radiobutton__radio-text">2018</span>
+                        </div>
+                     </label>
+                     <label class="lui-radiobutton">
+                        <input
+                           class="lui-radiobutton__input"
+                           type="radio"
+                           aria-label="2019 button"
+                           name="myradio"
+                           value="2019"
+                           checked
+                        />
+                        <div class="lui-radiobutton__radio-wrap">
+                           <span class="lui-radiobutton__radio"></span>
+                           <span class="lui-radiobutton__radio-text">2019</span>
+                        </div>
+                     </label>
+                     <label class="lui-radiobutton">
+                        <input
+                           class="lui-radiobutton__input"
+                           type="radio"
+                           aria-label="2020 button"
+                           name="myradio"
+                           value="2020"
+                        />
+                        <div class="lui-radiobutton__radio-wrap">
+                           <span class="lui-radiobutton__radio"></span>
+                           <span class="lui-radiobutton__radio-text">2020</span>
+                        </div>
+                     </label>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </main>
+
+      <!-- Loaded dev_test.dat here as no other way to access locally easily-->
+      <!-- See README for more detail-->
+      <script src="./dev_test.dat" type="text/javascript"></script>
+      <script src="./static/js/charts.js" type="text/javascript"></script>
+      <script
+         src="node_modules/leonardo-ui/dist/leonardo-ui.js"
+         type="text/javascript"
+      ></script>
+   </body>
+</html>
